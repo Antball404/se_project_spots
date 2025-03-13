@@ -1,7 +1,6 @@
 .profile {
   display: flex;
   padding: 34px 0 20px;
-  border-bottom: 1px rgba(33, 33, 33, 0.4) solid;
 }
 
 .profile__avatar {
@@ -55,12 +54,11 @@
   color: rgba(33, 33, 33, 1);
   font-size: 16px;
   line-height: 100%;
-  border-radius: 90px;
 }
 
 .profile__edit-btn:hover {
   cursor: pointer;
-  color: rgba(33, 33, 33, 1);
+  opacity: 100%;
 }
 
 .profile__add-btn {
@@ -89,7 +87,8 @@
     max-width: 288px;
     align-items: center;
     text-align: center;
-    padding: 20px 0 0;
+    padding: 20px 0 20px;
+    margin: 0 auto;
   }
 
   .profile__avatar {
@@ -125,5 +124,6 @@
     margin-left: 0;
     width: 100%;
     max-width: 288px;
+    justify-content: center;
   }
 }
