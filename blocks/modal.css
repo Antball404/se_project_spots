@@ -1,0 +1,124 @@
+.modal {
+  visibility: hidden;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal_is-opened {
+  visibility: visible;
+}
+
+.modal__container {
+  max-width: 730px;
+  width: 100%;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 8px;
+  padding: 32px 50px;
+  position: relative;
+}
+
+.modal__close-btn {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  opacity: 40%;
+  top: 32px;
+  right: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.modal__close-btn :hover {
+  cursor: pointer;
+  opacity: 100%;
+  border: 2px solid rgba(33, 33, 33, 1);
+  background-image: url(../images/X-button-hover.svg);
+}
+
+.modal__title {
+  margin: 0 0 32px;
+  color: rgba(33, 33, 33, 1);
+  font-weight: 500;
+  font-size: 32px;
+  font-family: poppins, Arial, Helvetica, sans-serif;
+  width: 169px;
+  height: 32px;
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  font-family: poppins, Arial, Helvetica, sans-serif;
+  font-weight: 500;
+}
+
+.modal__input {
+  display: block;
+  margin: 8px 0 0;
+  width: 100%;
+  border: 1px solid rgba(33, 33, 33, 0.4);
+  border-radius: 8px;
+  padding: 16px 0;
+  font-size: 20px;
+}
+
+.modal__input::placeholder {
+  color: rgba(33, 33, 33, 0.3);
+}
+
+.modal__label {
+  margin: 0 0 32px;
+  color: rgba(33, 33, 33, 0.7);
+}
+
+.modal__submit-btn {
+  width: 156px;
+  height: 52px;
+  background: rgba(33, 33, 33, 0.8);
+  border-radius: 8px;
+  padding: 18px 32px;
+  color: rgba(252, 245, 229, 1);
+  gap: 8px;
+}
+
+.modal__submit-btn:hover {
+  cursor: pointer;
+  background: rgba(33, 33, 33, 1);
+}
+
+@media screen and (max-width: 627px) {
+  .modal__container {
+    margin: 0 12px;
+    padding: 12px;
+    border-radius: 8px;
+  }
+
+  .modal__title {
+    font-size: 20px;
+    line-height: 100%;
+    width: 100%;
+    margin: 0 0 24px;
+  }
+
+  .modal__input {
+    width: 100%;
+    font-size: 16px;
+    line-height: 110%;
+    border: 1px solid rgba(33, 33, 33, 0.4);
+  }
+
+  .modal__submit-btn {
+    width: 100%;
+    height: 40px;
+    padding: 8px 16px;
+    font-size: 14px;
+    line-height: 120%;
+  }
+}
