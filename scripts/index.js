@@ -47,9 +47,11 @@ editProfileForm.addEventListener("submit", handleEditProfileSubmit);
 
 function handleAddCardSubmit(evt) {
   evt.preventDefault();
-  console.log("New post submitted");
+
   newPostModal.classList.remove("modal_is-opened");
 }
 
+console.log("New post submitted");
+
 addCardFormElement.addEventListener("submit", handleAddCardSubmit);
-// Add event listeners for the modal close buttons
+
