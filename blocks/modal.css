@@ -39,6 +39,7 @@
   justify-content: center;
   border: none;
   background-image: url(../images/X-button-hover.svg);
+  background-color: transparent;
 }
 
 .modal__close-btn:hover {
@@ -69,8 +70,10 @@
   width: 100%;
   border: 1px solid rgba(33, 33, 33, 0.4);
   border-radius: 8px;
-  padding: 16px 0;
+  padding: 16px 12px;
   font-size: 20px;
+  box-sizing: border-box;
+  line-height: 1;
 }
 
 .modal__input::placeholder {
@@ -101,7 +104,7 @@
 @media screen and (max-width: 627px) {
   .modal__container {
     margin: 0 12px;
-    padding: 12px;
+    padding: 22px 12px 12px;
   }
 
   .modal__title {
@@ -124,5 +127,14 @@
     padding: 8px 16px;
     font-size: 14px;
     line-height: 120%;
+  }
+
+  .modal__close-btn {
+    top: 22px;
+    right: 12px;
+  }
+
+  .modal__label {
+    margin-bottom: 24px;
   }
 }
