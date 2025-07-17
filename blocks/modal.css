@@ -10,7 +10,7 @@
   justify-content: center;
   align-items: center;
   opacity: 0;
-  transition: visibility 0s linear 0.5s, opacity 0.5s linear;
+  transition: visibility 0.3s, opacity 0.3s ease-in-out;
   padding: 0 10px;
 }
 
@@ -135,8 +135,7 @@
   color: white;
   margin: 0;
   background: rgba(33, 33, 33, 1);
-  width: 214px;
-  height: 32px;
+  position: absolute;
   border-radius: 8px;
   padding: 4px 8px;
   font-size: 20px;
@@ -154,7 +153,6 @@
 
 @media screen and (max-width: 480px) {
   .modal__container {
-    margin: 0 12px;
     padding: 22px 12px 12px;
   }
 
@@ -184,8 +182,6 @@
   }
 
   .modal__caption {
-    width: 175px;
-    height: 27px;
     font-size: 16px;
   }
 

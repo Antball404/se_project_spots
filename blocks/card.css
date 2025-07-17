@@ -30,6 +30,10 @@
   border-radius: 8px;
 }
 
+.card__image:hover {
+  cursor: pointer;
+}
+
 .card__like-btn {
   width: 23px;
   height: 20px;
@@ -66,6 +70,7 @@
 
 .card__trash-btn:hover {
   background-image: url(../images/Trash-Hover.svg);
+  cursor: pointer;
 }
 
 @media screen and (max-width: 627px) {

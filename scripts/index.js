@@ -87,7 +87,6 @@ profileAddBtn.addEventListener("click", () => {
 });
 
 newPostCloseBtn.addEventListener("click", () => {
-  newPostModal.classList.remove("modal_is-opened");
   closeModal(newPostModal);
 });
 
@@ -134,7 +133,6 @@ function handleEditProfileSubmit(evt) {
   evt.preventDefault();
   profileNameEl.textContent = editProfileNameInput.value;
   profileDescriptionEl.textContent = editProfileDescriptionInput.value;
-  editProfileModal.classList.remove("modal_is-opened"); //close modal
   closeModal(editProfileModal);
 }
 
@@ -152,8 +150,8 @@ addCardFormElement.addEventListener("submit", function (evt) {
   const cardElement = getCardElement(inputValues);
   cardsList.prepend(cardElement);
 
-  newPostModal.classList.remove("modal_is-opened");
   closeModal(newPostModal);
+  addCardFormElement.reset();
 });
 
 initialCards.forEach(function (item) {
