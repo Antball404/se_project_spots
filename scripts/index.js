@@ -1,3 +1,4 @@
+//TODO- pass settings object to the validation functions that are called in the file
 const initialCards = [
   {
     name: "Golden Gate Bridge",
@@ -61,6 +62,12 @@ const editProfileDescriptionInput = editProfileModal.querySelector(
 editProfileBtn.addEventListener("click", () => {
   editProfileNameInput.value = profileNameEl.textContent;
   editProfileDescriptionInput.value = profileDescriptionEl.textContent;
+  //Optional
+  resetValidation(
+    editProfileForm,
+    [editProfileNameInput, editProfileDescriptionInput],
+    settings
+  ); //12:07 part 6
   openModal(editProfileModal);
 });
 
@@ -72,6 +79,7 @@ const profileAddBtn = document.querySelector(".profile__add-btn");
 const newPostModal = document.querySelector("#new-post-modal");
 const newPostCloseBtn = newPostModal.querySelector(".modal__close-btn");
 const addCardFormElement = newPostModal.querySelector(".modal__form"); //new post submission
+const addCardsubmitBtn = newPostModal.querySelector(".modal__submit-btn"); //7:10
 const captionInputEl = addCardFormElement.querySelector(
   "#profile-caption-input"
 );
@@ -140,8 +148,6 @@ editProfileForm.addEventListener("submit", handleEditProfileSubmit);
 
 addCardFormElement.addEventListener("submit", function (evt) {
   evt.preventDefault();
-  //console.log("Form submitted!");
-
   const inputValues = {
     name: captionInputEl.value,
     link: linkInputEl.value,
@@ -149,7 +155,8 @@ addCardFormElement.addEventListener("submit", function (evt) {
 
   const cardElement = getCardElement(inputValues);
   cardsList.prepend(cardElement);
-
+  disableButton(addCardsubmitBtn, settings); // 06:40
+  console.log(inputValues);
   closeModal(newPostModal);
   addCardFormElement.reset();
 });

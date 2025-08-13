@@ -41,6 +41,7 @@
   border: none;
   opacity: 40%;
   background-color: transparent;
+  background-repeat: no-repeat;
 }
 
 .card__like-btn_active {
