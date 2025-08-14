@@ -13,12 +13,14 @@ const settings = {
 const showInputError = (formEl, inputEl, errorMsg, config) => {
   const errorMsgEl = formEl.querySelector(`#${inputEl.id}-error`);
   errorMsgEl.textContent = errorMsg;
-  inputEl.classList.add(config.inputErrorClass);
+  errorMsgEl.classList.add(config.errorClass);
+  //inputEl.classList.add(config.inputErrorClass);
 };
 //hideInputError and refining showInputError
 const hideInputError = (formEl, inputEl, config) => {
   const errorMsgEl = formEl.querySelector(`#${inputEl.id}-error`);
   errorMsgEl.textContent = "";
+  errorMsgEl.classList.remove(config.errorClass);
   inputEl.classList.remove(config.inputErrorClass);
 };
 
@@ -39,11 +41,8 @@ const hasInvalidInput = (inputList) => {
 const toggleButtonState = (inputList, buttonEl, config) => {
   if (hasInvalidInput(inputList)) {
     disableButton(buttonEl, config);
-    //add a modifier class to the buttonEl to make it grey
-    //Dont forget the CSS
   } else {
     buttonEl.disabled = false;
-    //remove the disabled class
     buttonEl.classList.remove(config.inactiveButtonClass);
   }
 };

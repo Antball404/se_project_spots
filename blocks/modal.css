@@ -93,6 +93,11 @@
 
 .modal__input_type_error {
   border: 1px solid rgba(255, 0, 0, 0.6);
+  font-size: 16px;
+}
+
+.modal__error_visible {
+  color: rgba(255, 0, 0, 0.7);
 }
 
 .modal__input::placeholder {
@@ -103,7 +108,6 @@
   color: rgba(255, 0, 0, 0.7);
   margin-top: 8px;
   display: block;
-  /*TODO- use correct color and font sizes*/
 }
 
 .modal__label {
@@ -148,7 +152,6 @@
 }
 
 .modal__caption {
-  /*TODO-STYLE CORRECTION*/
   color: white;
   margin: 0;
   background: rgba(33, 33, 33, 1);
@@ -200,10 +203,5 @@
 
   .modal__caption {
     font-size: 16px;
-  }
-
-  .modal__close_type_preview {
-    top: -48px;
-    right: 0;
   }
 }

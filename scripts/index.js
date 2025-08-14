@@ -30,11 +30,6 @@ const initialCards = [
   },
 ];
 
-initialCards.forEach(function (item) {
-  console.log(item.name);
-  console.log(item.link);
-});
-
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
 }
@@ -43,7 +38,6 @@ function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
 }
 
-const nameInput = document.querySelector("#profile-caption-input");
 const linkInput = document.querySelector("#card-image_link-input");
 
 const editProfileBtn = document.querySelector(".profile__edit-btn");
@@ -155,10 +149,10 @@ addCardFormElement.addEventListener("submit", function (evt) {
 
   const cardElement = getCardElement(inputValues);
   cardsList.prepend(cardElement);
-  disableButton(addCardsubmitBtn, settings); // 06:40
   console.log(inputValues);
   closeModal(newPostModal);
   addCardFormElement.reset();
+  enableValidation(settings);
 });
 
 initialCards.forEach(function (item) {
