@@ -1,4 +1,3 @@
-//TODO- pass settings object to the validation functions that are called in the file
 const initialCards = [
   {
     name: "Golden Gate Bridge",
@@ -30,15 +29,32 @@ const initialCards = [
   },
 ];
 
+function handleEscape(evt) {
+  if (evt.key === "Escape") {
+    const activePopup = document.querySelector(".modal_is-opened");
+    closeModal(activePopup);
+  }
+}
+
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
+  document.addEventListener("keyup", handleEscape);
 }
 
 function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
+  document.removeEventListener("keyup", handleEscape);
 }
 
-const linkInput = document.querySelector("#card-image_link-input");
+const modals = document.querySelectorAll(".modal");
+
+modals.forEach((modal) => {
+  modal.addEventListener("mousedown", (evt) => {
+    if (evt.target.classList.contains("modal")) {
+      closeModal(modal);
+    }
+  });
+});
 
 const editProfileBtn = document.querySelector(".profile__edit-btn");
 const editProfileModal = document.querySelector("#edit-profile-modal");
@@ -73,7 +89,7 @@ const profileAddBtn = document.querySelector(".profile__add-btn");
 const newPostModal = document.querySelector("#new-post-modal");
 const newPostCloseBtn = newPostModal.querySelector(".modal__close-btn");
 const addCardFormElement = newPostModal.querySelector(".modal__form"); //new post submission
-const addCardsubmitBtn = newPostModal.querySelector(".modal__submit-btn"); //7:10
+const addCardSubmitBtn = newPostModal.querySelector(".modal__submit-btn"); //7:10
 const captionInputEl = addCardFormElement.querySelector(
   "#profile-caption-input"
 );
@@ -152,7 +168,7 @@ addCardFormElement.addEventListener("submit", function (evt) {
   console.log(inputValues);
   closeModal(newPostModal);
   addCardFormElement.reset();
-  enableValidation(settings);
+  disableButton(addCardSubmitBtn, settings);
 });
 
 initialCards.forEach(function (item) {
